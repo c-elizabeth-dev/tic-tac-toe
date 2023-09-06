@@ -1,71 +1,3 @@
-// //This function is executed when a player wins
-// const winFunction = (letter) => {
-//     disableButtons();
-//     if (letter == "X") {
-//         msgRef.innerHTML = "&#x1F389; <br> 'X' Wins";
-//     } else {
-//         msgRef.innerHTML = "&#x1F389; <br> 'O' Wins";
-//     }
-//   };
-//   //Function for draw
-//   const drawFunction = () => {
-//     disableButtons();
-//     msgRef.innerHTML = "&#x1F60E; <br> It's a Draw";
-//   };
-//   //New Game
-//   newgameBtn.addEventListener("click", () => {
-//     count = 0;
-//     enableButtons();
-//   });
-//   restartBtn.addEventListener("click", () => {
-//     count = 0;
-//     enableButtons();
-//   });
-//   //Win Logic
-//   const winChecker = () => {
-//     //Loop through all win patterns
-//     for (let i of winningPattern) {
-//         let [element1, element2, element3] = [
-//             btnRef[i[0]].innerText,
-//             btnRef[i[1]].innerText,
-//             btnRef[i[2]].innerText,
-//         ];
-//         //Check if elements are filled
-//         //If 3 empty elements are same and would give win as would
-//         if (element1 != "" && (element2 != "") & (element3 != "")) {
-//             if (element1 == element2 && element2 == element3) {
-//                 //If all 3 buttons have same values then pass the value to winFunction
-//                 winFunction(element1);
-//             }
-//         }
-//     }
-//   };
-//   //Display X/O on click
-//   btnRef.forEach((element) => {
-//     element.addEventListener("click", () => {
-//         if (xTurn) {
-//             xTurn = false;
-//             //Display X
-//             element.innerText = "X";
-//             element.disabled = true;
-//         } else {
-//             xTurn = true;
-//             //Display Y
-//             element.innerText = "O";
-//             element.disabled = true;
-//         }
-//         //Increment count on each click
-//         count += 1;
-//         if (count == 9) {
-//             drawFunction();
-//         }
-//         //Check for win on every click
-//         winChecker();
-//     });
-//   });
-//   //Enable Buttons and disable popup on page load
-//   window.onload = enableButtons;
-
 
 
 const gameBoard = document.querySelector('#gameboard');
@@ -76,7 +8,7 @@ const startCells = [
 ]
 
 let go = "circle"
-infoDisplay.textContent = "Circle goes first"
+infoDisplay.innerHTML = "Circle goes first"
 
 
 function createBoard() {
@@ -96,7 +28,7 @@ function addGo(e) {                                             //* create a fun
     goDisplay.classList.add(go);                                //! your variable goDisplay that contains your created div, then gets a class added to it - circle is saved under variable go
     e.target.append(goDisplay);                                 //! you are then appending the o or x CLASS to goDisplay variable/div
     go = go === "circle" ? "cross" : "circle";                  //! means, if go deeply equals the string circle and that is true, then return cross, otherwise if not, then return circle
-    infoDisplay.textContent = "it is now " + go + " 's go."
+    infoDisplay.innerHTML = "It is now " + go + "'s turn."
     e.target.removeEventListener('click', addGo);
     checkScore();
 }

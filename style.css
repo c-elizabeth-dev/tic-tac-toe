@@ -6,22 +6,23 @@ body {
     align-items: center;
     height: 100vh;
     flex-direction: column;
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(176,229,208,1) 42%, rgba(92,202,238,0.41) 93.6% );
 }
 
 #gameboard {
     width: 300px;
     height: 300px;
-    background-color: black;
+    background-color: #e993fa;
     display: flex;
     flex-wrap: wrap;
-    border: solid 1px black;
+    border: solid 1px #e993fa;
 }
 
 .square {
     width: 100px;
     height: 100px;
     background-color: aliceblue;
-    border: solid 2px black;
+    border: solid 2px #e993fa;
     box-sizing: border-box;
     display: flex;                      /* This has centered the o and x to the center of the squares */
     justify-content: center;
@@ -32,7 +33,7 @@ body {
     height: 90px;
     width: 90px;
     border-radius: 50%;
-    border: 15px solid red;
+    border: 15px solid #d09cf7;
     box-sizing: border-box;
 }
 
@@ -47,7 +48,7 @@ body {
 .cross:before, .cross:after {
     content: "";
     position: absolute;
-    background-color: blue;
+    background-color: #f5c431;
 }
 
 .cross:before {
@@ -62,4 +63,10 @@ body {
     height: 30%;
     margin-top: -15%;
     width: 100%;
+}
+
+#info {
+    color: #eb7dff;
+    font-size: 30px;
+    font-family: 'Pacifico', cursive;
 }
